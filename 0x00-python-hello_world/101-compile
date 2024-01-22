@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+import py_compile
+import os
+pyfile = os.environ["PYFILE"]
+outfile = pyfile + "c"
+py_compile.compile(pyfile, outfile)
