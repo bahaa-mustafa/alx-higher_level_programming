@@ -9,6 +9,6 @@ def uppercase(str):
     for c in range(0: len(str)):
         if ord('{}'.format(str[c])) > 96 and ord('{}'.format(str[c])) < 123:
             str[c] = chr(ord('{}'.format(str[c])) - 32)
+            print("{}".format(str[c]))
         else:
-            pass
-    print("{}".format(str[:]))
+            print("{}".format(str[c]))
