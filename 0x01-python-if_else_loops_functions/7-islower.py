@@ -3,8 +3,7 @@
 # if it found pass else return false
 
 def islower(c):
-    for char in range(97: 123):
-        if chr(char) == c:
-            return True
-        else:
-            return False
+    if ord('{}'.format(c)) > 96 and ord('{}'.format(c)) < 123:
+        return True
+    else:
+        return False
