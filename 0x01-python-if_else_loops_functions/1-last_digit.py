@@ -2,7 +2,8 @@
 import random
 number = random.randint(-10000, 10000)
 # YOUR CODE HERE
-
+if not isinstance(number, (int)):
+    raise TypeError()
 # if number >= 0 ===> if last digit > 5 print great than 5
 # ===> if == 0 print is 0
 # ===> if is less than 6 print less than 6
