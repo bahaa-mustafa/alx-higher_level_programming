@@ -6,10 +6,9 @@
 # if not convert to upper by using ascii code: (ascii code - 32)
 
 def uppercase(str):
-    length = len(str)
-    for c in range(0: length):
-        if ord(str[c]) > 96 and ord(str[c]) < 123:
-            str[c] = chr(ord(str[c]) - 32)
+    for c in range(0: len(str)):
+        if ord('{}'.format(str[c])) > 96 and ord('{}'.format(str[c])) < 123:
+            str[c] = chr(ord('{}'.format(str[c])) - 32)
         else:
             pass
     print("{}".format(str))
