@@ -3,9 +3,10 @@
 # if it found pass else return false
 
 def islower(c):
-    if not isinstance(c, chr):
-        raise TypeError()
-    elif ord('{}'.format(c)) > 96 and ord('{}'.format(c)) < 123:
+    if ord('{}'.format(c)) > 96 and ord('{}'.format(c)) < 123:
         return True
+
+    elif not isinstance(c, chr):
+        raise TypeError()
     else:
         return False
