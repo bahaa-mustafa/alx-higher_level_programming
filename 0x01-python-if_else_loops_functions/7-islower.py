@@ -8,7 +8,7 @@ def islower(c):
 
     elif not isinstance(c, chr):
         raise TypeError()
-    elif ord('{}'.format(c)) > 64 and ord('{}'.format(c)) < 91:
+    else: #ord('{}'.format(c)) > 64 and ord('{}'.format(c)) < 91:
         return False
-    else:
-        raise TypeError()
+#    else:
+#        raise TypeError()
