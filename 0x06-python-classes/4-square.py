@@ -10,14 +10,7 @@ class Square:
         Args:
             size: value of side square
        """
-
-    def area(self):
-        """Area of self squar.
-
-        Return: area of squar.
-        """
-        return self.__size * 2
-
+       self.size = size
     @property
     def size(self):
         """define getter method.
@@ -42,3 +35,10 @@ class Square:
         if (value < 0):
             raise ValueError("size must be >= 0")
         self.__size = value
+
+    def area(self):
+        """Area of self squar.
+
+        Return: area of squar.
+        """
+        return self.__size ** 2
