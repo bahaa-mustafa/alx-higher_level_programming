@@ -34,7 +34,7 @@ class Node:
 
     @property
     def next_node(self):
-        """Constractor.
+        """get and set for next_node.
 
         Raise:
             TypeError: when it is not none or not node
@@ -45,7 +45,8 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        if (not isinstance(value, Node) and value is not None):
+        if (not isinstance(value, Node) and
+                value is not None):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
@@ -58,8 +59,10 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """set new node.
-
-        insert new node according to data order
+        insert new node according to data order in 
+        three cases if node is empty or has a data
+        and it big than our data and in case it less than
+        our data.
 
         Args:
             value: intger value
@@ -83,7 +86,11 @@ class SinglyLinkedList:
             temp.next_node = new_node
 
     def __str__(self):
-        """define the print function"""
+        """define the print function.
+        it is like a constractor function and
+        it called when called print
+
+        Return: linked list each sdata in new line"""
         values = []
         temp = self.__head
         while temp is not None:
