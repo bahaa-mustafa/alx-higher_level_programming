@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""square class module"""
+"""square module"""
 
 
 class Square:
@@ -43,22 +43,11 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple):
+        if not isinstance(value, tuple) and all(i, int) for i in value and i >= 0:
+
             raise TypeError("position must be a tuple of 2 positive integers")
 
-        elif not isinstance(value[0], int) and
-        not isinstance(value[1], int):
-            raise TypeError("position must be a tuple of 2 positive integers")
-
-        for c in value:
-            elif c < 0:
-                raise TypeError("position must be a tuple of 2 positive integers")
-
-           elif len(value) != 2:
-                raise TypeError("position must be a tuple of 2 positive integers")
-
-        else:
-            self.__position = value
+        self.__position = value
 
     def area(self):
         """Area of self square.
