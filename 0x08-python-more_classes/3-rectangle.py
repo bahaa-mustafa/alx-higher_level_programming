@@ -59,9 +59,10 @@ class Rectangle:
            for n in range(self.__height):
                for t in range(self.__width):
                    string += ("#")
-               string += '\n'
-        return string 
-    """
+               if (n + 1) < self.__height:
+                   string += '\n'
+        return string
+        """
     def __repr__(self):
         print(f"<3-rectangle.Rectangle object at {&}>")
         """
