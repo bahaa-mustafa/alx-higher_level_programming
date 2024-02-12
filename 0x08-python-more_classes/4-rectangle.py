@@ -63,6 +63,6 @@ class Rectangle:
                     string += '\n'
         return string
 
-    def __repr(self):
+    def __repr__(self):
         """return string by name of class and his data"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
