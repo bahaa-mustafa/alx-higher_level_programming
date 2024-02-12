@@ -1,5 +1,48 @@
->>>>> module test
-***************************************
->>>>> test function add(a, b)
----------------------------------------
+import function from module:
 
+	>>> add_int = __import__('0-add_integer').add_integer
+
+test one int value in function add(a, b = 98):
+
+	>>> add_int(102)
+	200
+
+test negetive one int value:
+
+	>>> add_int(-102)
+	-4
+
+test one float value in same function:
+
+	>> add_int(102.2)
+	200
+
+test one negetive float value:
+
+	>>> add_int(-98.2)
+	0
+
+test two int value:
+
+	>>> add_int(5, 5)
+	10
+
+test two negetive int value:
+
+	>>> add_int(5, -5)
+	0
+
+test big two number int value:
+
+	>>> add_int(5000000000, 5000000000)
+	10000000000
+
+test two float value:
+
+	>>> add_int(5.2, 5.3)
+	10
+
+test two negetive float value:
+
+	>>> add_int(-5.2, -5.3)
+	-10
