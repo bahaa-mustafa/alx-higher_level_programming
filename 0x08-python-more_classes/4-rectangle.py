@@ -62,7 +62,7 @@ class Rectangle:
                 if (n + 1) < self.__height:
                     string += '\n'
         return string
-        """
-    def __repr__(self):
-        print(f"<3-rectangle.Rectangle object at {&}>")
-        """
+
+    def __repr(self):
+        """return string by name of class and his data"""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
