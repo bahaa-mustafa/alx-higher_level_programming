@@ -48,17 +48,19 @@ class Rectangle:
 
     def perimeter(self):
         """get perimeter of rectangle"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
         return (self.__width + self.__height) * 2
 
     def __str__(self):
         """print # for width and height"""
-       string = ""
-       if self.__width != 0 and self.__height != 0:
-           for i in range(self.height):
-               for t in range(self.width):
-                   string = string.join("#")
-                string = string.join("\n")
-        return string
+        string = ""
+        if self.__width != 0 and self.__height != 0:
+           for n in range(self.__height):
+               for t in range(self.__width):
+                   string += ("#")
+               string += '\n'
+        return string 
     """
     def __repr__(self):
         print(f"<3-rectangle.Rectangle object at {&}>")
