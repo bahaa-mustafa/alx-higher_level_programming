@@ -62,7 +62,7 @@ class Rectangle:
         if self.__width != 0 and self.__height != 0:
             for n in range(self.__height):
                 for t in range(self.__width):
-                    string += Rectangle.print_symbol
+                    string += str(self.print_symbol)
                 if (n + 1) < self.__height:
                     string += '\n'
         return string
