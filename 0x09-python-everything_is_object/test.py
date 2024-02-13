@@ -21,3 +21,17 @@ l1 = [1, 2, 3]
 l2 = [4, 5, 6]
 assign_value(l1, l2)
 print(l1)
+
+print("---------")
+
+a = [1, 2, 3, 4]
+print(id(a))
+a = a + [5]
+print(id(a))
+
+print("---------")
+
+a = [1, 2, 3]
+print(id (a))
+a += [4]
+print(id(a))
