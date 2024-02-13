@@ -1,0 +1,13 @@
+	>>> new_say = __import__('3-say_my_name').say_my_name
+
+	>>> new_say("John", "Smith")
+	My name is John Smith
+
+	>>> new_say("Bob")
+	My name is Bob 
+
+	>>> new_say("12", "White")
+	My name is 12 White
+
+	>>> new_say("Bob", "12")
+	My name is Bob 12
