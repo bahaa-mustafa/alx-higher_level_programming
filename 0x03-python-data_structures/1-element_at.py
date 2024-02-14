@@ -6,6 +6,6 @@ def element_at(my_list, idx):
     """return element at index idx"""
     if idx < 0:
         return None
-    if my_list[idx]:
+    if len(my_list) > idx:
         return (my_list[idx])
     return None
