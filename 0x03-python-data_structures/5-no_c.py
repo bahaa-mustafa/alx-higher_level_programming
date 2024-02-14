@@ -4,8 +4,8 @@
 
 def no_c(my_string):
     """return new list after remove c and C character"""
-    if not my_string:
-        return None
+    """if not my_string:
+        return None"""
     new_string = ""
     for i in range(len(my_string)):
         if (my_string[i] != 'c' and my_string[i] != 'C'):
