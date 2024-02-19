@@ -1,36 +1,49 @@
->>> MyList = __import__('1-my_list').MyList
+The ``1-my_list`` module
+============================
 
->>> ml = MyList()
->>> type(ml) == MyList
-True
+Using ``1-mylist``
+---------------------
 
->>> ml = MyList()
->>> isinstance(ml, list)
-True
+import module:
+	>>> MyList = __import__('1-my_list').MyList
 
->>> ml = MyList()
->>> ml.print_sorted()
-[]
+test type of my list:
+	>>> ml = MyList()
+	>>> type(ml) == MyList
+	True
 
->>> ml = MyList([7, 10, 2])
->>> ml.print_sorted()
-[2, 7, 10]
+test instance of my list:
+	>>> ml = MyList()
+	>>> isinstance(ml, list)
+	True
 
->>> ml = MyList([-2000, -99, -232565, 0, -23423434, -143])
->>> ml.print_sorted()
-[-23423434, -232565, -2000, -143, -99, 0]
->>> ml
-[-2000, -99, -232565, 0, -23423434, -143]
+test void list:
+	>>> ml = MyList()
+	>>> ml.print_sorted()
+	[]
 
->>> ml = MyList()
->>> ml.append(7)
->>> ml
-[7]
+test normal list:
+	>>> ml = MyList([7, 10, 2])
+	>>> ml.print_sorted()
+	[2, 7, 10]
 
->>> ml.print_sorted([4, 2, 5])
-Traceback (most recent call last):
-TypeError: print_sorted() takes 1 positional argument but 3 were given
+test negetive list:
+	>>> ml = MyList([-2000, -99, -232565, 0, -23423434, -143])
+	>>> ml.print_sorted()
+	[-23423434, -232565, -2000, -143, -99, 0]
+	>>> ml
+	[-2000, -99, -232565, 0, -23423434, -143]
 
->>> ml.print_sorted([4, 2, 5])
-Traceback (most recent call last):
-TypeError: print_sorted() takes 1 positional argument but 2 were given
+test append to list:
+	>>> ml = MyList()
+	>>> ml.append(7)
+	>>> ml
+	[7]
+
+test print not my list:
+	>>> ml.print_sorted([4, 2, 5])
+	Traceback (most recent call last):
+	TypeError: print_sorted() takes 1 positional argument but 3 were given
+	>>> ml.print_sorted([4, 2, 5])
+	Traceback (most recent call last):
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
