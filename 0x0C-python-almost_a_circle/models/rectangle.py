@@ -96,10 +96,13 @@ class Rectangle(Base):
         if y:
             self.__y = y
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """add args from tuple to each argument"""
         if args:
             self.__set_update(*args)
+
+        elif kwargs:
+            self.__set_update(**kwargs)
 
     def check_value(self, name, value, not_zero = True):
         """check if value is number integer bigger than 0 or equal"""
