@@ -39,6 +39,23 @@ class Base:
         """return list of json string"""
 
         if json_string is None or not json_string:
-            return "[]"
+            return []
 
         return ["{}".format(json.loads(json_string))]
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ returns an instance with all attributes already set"""
+
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls is Rectangle:
+            dummy = Rectangle(1, 1)
+        elif cls is Square:
+            dummy = Square(1)
+        else:
+            dummy = None
+
+        dummy.update(**dictionary)
+        return dummy
