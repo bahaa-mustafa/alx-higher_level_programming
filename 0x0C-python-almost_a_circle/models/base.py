@@ -33,3 +33,12 @@ class Base:
 
         with open("{}.json".format(cls.__name__), 'w', encoding="UTF8") as fil:
             fil.write(cls.to_json_string(list_objs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """return list of json string"""
+
+        if json_string is None or not json_string:
+            return "[]"
+
+        return ["{}".format(json.loads(json_string))]
