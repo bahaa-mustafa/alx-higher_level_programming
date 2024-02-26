@@ -21,6 +21,29 @@ class Square(Rectangle):
         self.check_value("width", value)
         self.width = self.height = value
 
+    def __set_update(self, id = None, size = None, x = None, y = None):
+        """set update in square class"""
+
+        if id:
+            self.id = id
+
+        if size:
+            self.width = self.height = size
+
+        if x:
+            self.x = x
+
+        if y:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        """update argument in square class"""
+        if args:
+            self.__set_update(*args)
+
+        elif kwargs:
+            self.__set_update(**kwargs)
+
     def __str__(self):
         """destractor of square class"""
         return("[Square] ({}) {}/{} - {}".format(self.id,
