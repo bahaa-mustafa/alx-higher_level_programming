@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """class module"""
+import json
 
 
 class Base:
@@ -15,11 +16,20 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """confarm json string"""
-        import json
-
-
+        
         if list_dictionaries:
             return json.dumps(list_dictionaries)
         return "[]"
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """convart jason to file"""
+
+        if list_objs:
+            list_objs = [i.to_dictionary() for i in list_objs]
+
+        with open("{}.json".format(cls.__name__), 'w', encoding="UTF8") as fil:
+            fil.write(cls.to_json_string(list_objs))
