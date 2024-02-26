@@ -11,6 +11,16 @@ class Square(Rectangle):
         """constractor of square class"""
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """getter and setter for size attribute"""
+        return self.width
+    @size.setter
+    def size(self, value):
+        """setter of size value"""
+        self.check_value("width", value)
+        self.width = self.height = value
+
     def __str__(self):
         """destractor of square class"""
         return("[Square] ({}) {}/{} - {}".format(self.id,
