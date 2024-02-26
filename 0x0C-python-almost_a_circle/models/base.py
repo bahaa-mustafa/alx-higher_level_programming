@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """class module"""
 import json
+from models.square import Square
+from models.rectangle import Rectangle
 
 
 class Base:
@@ -47,9 +49,6 @@ class Base:
     def create(cls, **dictionary):
         """ returns an instance with all attributes already set"""
 
-        from models.rectangle import Rectangle
-        from models.square import Square
-
         if cls is Rectangle:
             dummy = Rectangle(1, 1)
         elif cls is Square:
@@ -59,3 +58,7 @@ class Base:
 
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances"""
