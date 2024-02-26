@@ -78,32 +78,29 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
+    def __set_update(self, id = None, width = None, height = None, x = None, y = None):
+        """set arguments in ther position"""
+
+        if id:
+            super().__init__(id)
+
+        if width:
+            self.__width = width
+
+        if height:
+            self.__height = height
+
+        if x:
+            self.__x = x
+
+        if y:
+            self.__y = y
+
     def update(self, *args):
         """add args from tuple to each argument"""
-        for arg in range(len(args)):
-            """
-            if args[0]:
-                super().__init__(args[0])
-            if args[1]:
-                self.check_value("width", args[1])
-                self.__width = args[1]
-            if args[2]:
-                self.check_value("height", args[2])
-                self.__height = args[2]
-            if args[3]:
-                self.check_value("x", args[3], False)
-                self.__x = args[3]
-            if args[4]:
-                self.check_value("y", args[4], False)
-                self.__y = args[4]"""
+        if args:
+            self.__set_update(*args)
 
-            switcher = {
-                    0: super().__init__(args[0]),
-                    1: self.__width = (args[1]),
-                    2: self.__height = (args[2]),
-                    3: self.__x = (args[3]),
-                    4: self.__y = (args[4]),
-                    }
     def check_value(self, name, value, not_zero = True):
         """check if value is number integer bigger than 0 or equal"""
         if not isinstance(value, int):
