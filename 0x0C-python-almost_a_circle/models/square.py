@@ -44,6 +44,10 @@ class Square(Rectangle):
         elif kwargs:
             self.__set_update(**kwargs)
 
+    def to_dictionary(self):
+        """convart data of square to dictionary"""
+        return {"id": self.id, "x": self.x, "size": self.width, "y": self.y}
+
     def __str__(self):
         """destractor of square class"""
         return("[Square] ({}) {}/{} - {}".format(self.id,
