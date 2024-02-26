@@ -113,6 +113,10 @@ class Rectangle(Base):
         elif value <= 0 and not_zero == False:
             raise ValueError("{} must be >= 0".format(name))
 
+    def to_dictionary(self):
+        """convert rectangle data to dictionary"""
+        return {"x": self.x, "y": self.y, "id": self.id, "height": self.height, "width": self.width}
+
     def __str__(self):
         """destractor of reactangle class"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
