@@ -78,8 +78,8 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def __set_update(self, id=None, width=None,
-            height=None, x=None, y=None):
+    def __set_update(self, id=None, width=None, height=None,
+            x=None, y=None):
         """set arguments in ther position"""
 
         if id:
@@ -121,4 +121,5 @@ class Rectangle(Base):
 
     def __str__(self):
         """destractor of reactangle class"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+            self.__x, self.__y, self.__width, self.__height))

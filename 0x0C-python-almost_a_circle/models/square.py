@@ -19,7 +19,7 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """setter of size value"""
-        self.check_value("width", value)
+        #self.check_value("width", value)
         self.width = self.height = value
 
     def __set_update(self, id=None, size=None, x=None, y=None):
