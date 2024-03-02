@@ -58,8 +58,7 @@ class Base:
     def load_from_file(cls):
         """ returns a list of instances"""
         try:
-            with open
-            ("{}.json".format(cls.__name__), 'r', encoding="UTF8") as fil:
+            with open("{}.json".format(cls.__name__), 'r') as fil:
                 list_inst = Base.from_json_string(file.read())
                 return [cls.create(**lis) for lis in list_inst]
         except IOError:
