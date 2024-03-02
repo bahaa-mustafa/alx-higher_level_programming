@@ -37,10 +37,10 @@ class Base:
     def from_json_string(json_string):
         """return list of json string"""
 
-        if json_string is None or not json_string:
+        if json_string is None or json_string == '[]':
             return []
 
-        return ["{}".format(json.loads(json_string))]
+        return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
