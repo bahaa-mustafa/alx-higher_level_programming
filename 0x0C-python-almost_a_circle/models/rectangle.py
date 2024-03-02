@@ -17,10 +17,10 @@ class Rectangle(Base):
             y: instance value
         Return: no return
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -31,6 +31,12 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         self.check_value("width", value)
+        
+        """if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        """
         self.__width = value
 
     @property
@@ -41,6 +47,11 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         self.check_value("height", value)
+        """if type(value) != int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
+        """
         self.__height = value
 
     @property
@@ -51,6 +62,12 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         self.check_value("x", value, False)
+        
+        """if type(value) != int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        """
         self.__x = value
 
     @property
@@ -61,6 +78,11 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         self.check_value("y", value, False)
+        """if type(value) != int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        """
         self.__y = value
 
     def area(self):
@@ -106,11 +128,11 @@ class Rectangle(Base):
 
     def check_value(self, name, value, not_zero = True):
         """check if value is number integer bigger than 0 or equal"""
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        if value < 0 and not_zero:
+        if value <= 0 and not_zero == True:
             raise ValueError("{} must be > 0".format(name))
-        elif value <= 0 and not_zero == False:
+        elif value < 0 and not_zero == False:
             raise ValueError("{} must be >= 0".format(name))
 
     def to_dictionary(self):
