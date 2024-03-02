@@ -59,7 +59,7 @@ class Base:
         """ returns a list of instances"""
         try:
             with open("{}.json".format(cls.__name__), 'r') as fil:
-                list_inst = Base.from_json_string(file.read())
+                list_inst = Base.from_json_string(fil.read())
                 return [cls.create(**lis) for lis in list_inst]
         except IOError:
             return []
