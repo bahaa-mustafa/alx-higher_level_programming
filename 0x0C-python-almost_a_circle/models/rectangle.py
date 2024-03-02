@@ -31,12 +31,6 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         self.check_value("width", value)
-        
-        """if type(value) != int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        """
         self.__width = value
 
     @property
@@ -47,11 +41,6 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         self.check_value("height", value)
-        """if type(value) != int:
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
-        """
         self.__height = value
 
     @property
@@ -62,12 +51,6 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         self.check_value("x", value, False)
-        
-        """if type(value) != int:
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        """
         self.__x = value
 
     @property
@@ -78,11 +61,6 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         self.check_value("y", value, False)
-        """if type(value) != int:
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        """
         self.__y = value
 
     def area(self):
@@ -100,7 +78,8 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def __set_update(self, id = None, width = None, height = None, x = None, y = None):
+    def __set_update(self, id=None, width=None,
+            height=None, x=None, y=None):
         """set arguments in ther position"""
 
         if id:
@@ -126,20 +105,20 @@ class Rectangle(Base):
         elif kwargs:
             self.__set_update(**kwargs)
 
-    def check_value(self, name, value, not_zero = True):
+    def check_value(self, name, value, not_zero=True):
         """check if value is number integer bigger than 0 or equal"""
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        if value <= 0 and not_zero == True:
+        if value <= 0 and not_zero:
             raise ValueError("{} must be > 0".format(name))
-        elif value < 0 and not_zero == False:
+        elif value < 0 and not not_zero:
             raise ValueError("{} must be >= 0".format(name))
 
     def to_dictionary(self):
         """convert rectangle data to dictionary"""
-        return {"x": self.x, "y": self.y, "id": self.id, "height": self.height, "width": self.width}
+        return {"x": self.x, "y": self.y, "id": self.id,
+                "height": self.height, "width": self.width}
 
     def __str__(self):
         """destractor of reactangle class"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-            self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))

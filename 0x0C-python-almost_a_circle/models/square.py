@@ -15,13 +15,14 @@ class Square(Rectangle):
     def size(self):
         """getter and setter for size attribute"""
         return self.width
+
     @size.setter
     def size(self, value):
         """setter of size value"""
         self.check_value("width", value)
         self.width = self.height = value
 
-    def __set_update(self, id = None, size = None, x = None, y = None):
+    def __set_update(self, id=None, size=None, x=None, y=None):
         """set update in square class"""
 
         if id:
@@ -50,5 +51,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """destractor of square class"""
-        return("[Square] ({}) {}/{} - {}".format(self.id,
-            self.x, self.y, self.width))
+        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width))
