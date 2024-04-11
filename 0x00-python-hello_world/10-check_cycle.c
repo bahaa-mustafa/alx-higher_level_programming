@@ -8,14 +8,10 @@
 */
 int check_cycle(listint_t *list)
 {
-    listint_t *current, *checker;
+    listint_t *current = list, *checker = list;
 
     if (list == NULL)
-    {
         return (0);
-    }
-    current = list;
-    checker = list;
     while (current && checker && current->next)
     {
         checker = checker->next->next;
