@@ -5,5 +5,5 @@ def yourStyle(i):
     return chr(i)
 
 
-for i in range(90, 64, -1):
-    print("{}".format(yourStyle(i)), end="")
+for c in range(90, 64, -1):
+    print("{}".format(yourStyle(c)), end="")
