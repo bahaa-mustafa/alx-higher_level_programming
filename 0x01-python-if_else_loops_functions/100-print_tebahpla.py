@@ -4,5 +4,6 @@ def yourStyle(i):
         return chr(i + 32)
     return chr(i)
 
+
 for i in range(90, 64, -1):
-    print ("{}".format(yourStyle(i)), end="")
+    print("{}".format(yourStyle(i)), end="")
