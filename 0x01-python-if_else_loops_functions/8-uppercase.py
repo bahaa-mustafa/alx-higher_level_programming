@@ -1,11 +1,11 @@
 #!/usr/bin/python3
+def convert_lower(c):
+    if ord(c) >= 97 and ord(c) <= 122:
+        return chr(ord(c) - 32)
+    else:
+        return c
 
 def uppercase(str):
     for c in str:
-        if ord(c) >= 65 and ord(c) <= 90:
-            print("{}".format(c), end="")
-        elif ord(c) >= 97 and ord(c) <= 122:
-            print("{}".format(chr(ord(c) - 32)), end="")
-        else:
-            print("{}".format(c), end="")
+        print("{}".format(convert_lower(c)), end="")
     print("")
