@@ -5,4 +5,4 @@ def yourStyle(i):
     return chr(i)
 
 for i in range(90, 64, -1):
-    print (yourStyle(i), end="")
+    print ("{}".format(yourStyle(i)), end="")
