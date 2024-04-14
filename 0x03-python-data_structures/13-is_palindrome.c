@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 
 
     if (!*head)
-        return (0);
+        return (1);
 
     current = *head;
     while (current)
@@ -23,8 +23,6 @@ int is_palindrome(listint_t **head)
         flag++;
         current = current->next;
     }
-    if (flag % 2 != 0)
-        return (0);
     
     for (i = 0, j = flag - 1; i < flag && j > i; i++)
     {
