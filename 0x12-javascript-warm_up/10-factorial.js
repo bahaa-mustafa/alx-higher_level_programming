@@ -1,7 +1,7 @@
 #!/usr/bin/node
 function factorial (a) {
   let result = 1;
-  if (isNaN(a)) {
+  if (isNaN(a) || a === 0) {
     console.log(result);
   } else {
     for (let i = parseInt(a); i > 0; i--) {
