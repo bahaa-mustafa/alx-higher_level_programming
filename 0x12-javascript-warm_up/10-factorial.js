@@ -1,6 +1,5 @@
 #!/usr/bin/node
 function factorial (a) {
-  const result = 1;
   if (a === 1 || a === 0 || a < 0) {
     return (1);
   }
